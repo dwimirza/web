@@ -7,7 +7,7 @@ const render = (path, res) => {
         if (err) {
             res.writeHead(404);
             res.write('Error: file not found');
-        }else{
+        } else {
             res.write(data);
         }
         res.end();
@@ -15,36 +15,46 @@ const render = (path, res) => {
 }
 
 function panggilCss(req, res) {
-    if(req.url == '/style.css'){
-        res.writeHead(200,{
-            'Content-Type' : 'text/css'
-    });
-    const fileContents = fs.readFileSync('./style.css',{encoding: 'utf8'});
-    res.write(fileContents);
-    res.end();
-}
+    if (req.url == '/style.css') {
+        res.writeHead(200, {
+            'Content-Type': 'text/css'
+        });
+        const fileContents = fs.readFileSync('./style.css', {
+            encoding: 'utf8'
+        });
+        res.write(fileContents);
+        res.end();
+    }
 }
 
 
 http.createServer((req, res) => {
-    res.writeHead(200, {
-    'Content-Type' : 'text/html'
-})
- 
-panggilCss(req, res);
-const url = req.url;
+        res.writeHead(200, {
+            'Content-Type': 'text/html'
+        })
 
-switch (url) {    
-    case '/form':
-        render('./form.html', res)
-        break
-    default:
-        render('./index.html', res)
-        break
-}
+        panggilCss(req, res);
+        const url = req.url;
 
-})
-.listen(port, () => {
-    console.log(`Server is listening on port ${port}`); 
-});
+        switch (url) {
+            case '/form':
+                render('./form.html', res)
+                break
+            case '/about':
+                render('./about.html', res)
+                break
+            case '/contact':
+                render('./contact.html', res)
+                break
+            case '/login':
+                render('./login.html', res)
+                break
+            default:
+                render('./index.html', res)
+                break
+        }
 
+    })
+    .listen(port, () => {
+        console.log(`Server is listening on port ${port}`);
+    });
