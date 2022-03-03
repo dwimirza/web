@@ -1,0 +1,60 @@
+#fitursection .bg #content-fitur {
+    width: 65rem;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 18rem;
+}
+
+#fitursection .folder {
+    background-color: white;
+    box-shadow: gray 0 0 5px;
+    width: 250px;
+    height: 280px;
+    margin-top: -20em;
+    padding-left: 10px;
+    border-radius: 20px;
+}
+
+
+#fitursection .folder .img-fav img {
+    height: 180px;
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+#fitursection .folder .txt-fav p {
+    font-size: 14px;    
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#fitursection .folder .img-onkir img {
+    height: 180px;
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#fitursection .folder .txt-onkir p {
+    font-size: 14px;    
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#fitursection .folder .img-review img {
+    height: 180px;
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#fitursection .folder .txt-review p {
+    font-size: 14px;    
+    font-weight: bold;    
+    margin-top: 20px;
+    text-align: center;
+}
