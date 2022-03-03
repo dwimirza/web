@@ -14,16 +14,28 @@ const render = (path, res) => {
     })
 }
 
+function panggilCss(req, res) {
+    if(req.url == '/style.css'){
+        res.writeHead(200,{
+            'Content-Type' : 'text/css'
+    });
+    const fileContents = fs.readFileSync('./style.css',{encoding: 'utf8'});
+    res.write(fileContents);
+    res.end();
+}
+}
 
- http.createServer((req, res) => {
-    res.writeHead(200, {'Content-Type' : 'text/html'
+
+http.createServer((req, res) => {
+    res.writeHead(200, {
+    'Content-Type' : 'text/html'
 })
  
+panggilCss(req, res);
 const url = req.url;
 
-switch (url) {
-    
-    case 'form':
+switch (url) {    
+    case '/form':
         render('./form.html', res)
         break
     default:
